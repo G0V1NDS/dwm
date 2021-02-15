@@ -153,7 +153,7 @@ To type capital letters, hold down the \f(CWShift\fP key\(emthat might sound lik
 .ITEM
 \f(CWMod+e\fP \(en neomutt (email) \(en Must be first configured by running \f(CWmw add\fP.
 .ITEM
-\f(CWMod+E\fP \(en abook (contacts, addressbook, emails)
+\f(CWMod+E\fP \(en Show/hide editor with selected or clipboard content (editanywhere)
 .ITEM
 \f(CWMod+m\fP \(en ncmpcpp (music player)
 .ITEM
@@ -163,13 +163,13 @@ To type capital letters, hold down the \f(CWShift\fP key\(emthat might sound lik
 .ITEM
 \f(CWMod+n\fP \(en vimwiki (for notes)
 .ITEM
-\f(CWMod+N\fP \(en newsboat (RSS feed reader)
+\f(CWMod+N\fP \(en Show/hide quick notetaker
 .ITEM
 \f(CWMod+F4\fP \(en pulsemixer (audio system control)
 .ITEM
 \f(CWMod+Shift+Enter\fP \(en Show/hide dropdown terminal
 .ITEM
-\f(CWMod+'\fP \(en Show/hide dropdown calculator
+\f(CWMod+'\fP \(en Show/hide taskwarrior tui
 .ITEM
 \f(CWMod+D\fP \(en passmenu (password manager)
 .LIST OFF

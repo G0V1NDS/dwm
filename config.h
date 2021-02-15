@@ -34,13 +34,13 @@ typedef struct {
 } Sp;
 
 const char *spcmd1[] = {TERMINAL, "-n", "spterm", "-g", "120x34", NULL };
-const char *spcmd2[] = {TERMINAL, "-n", "spcalc", "-f", "monospace:size=16", "-g", "50x20", "-e", "bc", "-lq", NULL };
+const char *spcmd2[] = {TERMINAL, "-n", "sptask", "-g", "150x40", "-e", "taskwarrior-tui", NULL };
 const char *spcmd3[] = {TERMINAL, "-n", "spnote", "-g", "120x34", "-e", "notetaker", NULL };
 const char *spcmd4[] = {"editanywhere", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
-	{"spcalc",      spcmd2},
+	{"sptask",      spcmd2},
 	{"spnote",      spcmd3},
 	{"spedit",      spcmd4},
 };
@@ -58,7 +58,7 @@ static const Rule rules[] = {
 	{ TERMCLASS,   NULL,           NULL,       	    0,            0,           1,         0,        -1 },
 	{ NULL,       NULL,           "Event Tester",   0,            0,           0,         1,        -1 },
 	{ NULL,      "spterm",        NULL,       	    SPTAG(0),     1,           1,         0,        -1 },
-	{ NULL,      "spcalc",        NULL,       	    SPTAG(1),     1,           1,         0,        -1 },
+	{ NULL,      "sptask",        NULL,       	    SPTAG(1),     1,           1,         0,        -1 },
 	{ NULL,      "spnote",        NULL,       	    SPTAG(2),     1,           1,         0,        -1 },
 	{ NULL,      "spedit",        NULL,       	    SPTAG(3),     1,           1,         0,        -1 },
 };
@@ -168,7 +168,6 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_q,		spawn,		SHCMD("sysact") },
 	{ MODKEY,			XK_w,		spawn,		SHCMD("$BROWSER") },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD(TERMINAL " -e sudo nmtui") },
-	/* { MODKEY,			XK_e,		spawn,		SHCMD("editanywhere") }, */
 	{ MODKEY,		        XK_e,	togglescratch,	{.ui = 3} },
 	{ MODKEY|ShiftMask,		XK_e,		spawn,		SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks; rmdir ~/.abook") },
 	{ MODKEY,			XK_r,		spawn,		SHCMD(TERMINAL " -e lf") },
@@ -221,9 +220,7 @@ static Key keys[] = {
 	/* V is automatically bound above in STACKKEYS */
 	{ MODKEY,			XK_b,		togglebar,	{0} },
 	/* { MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("") }, */
-	/* { MODKEY,			XK_n,		spawn,		SHCMD(TERMINAL " -e nvim -c VimwikiIndex") }, */
 	{ MODKEY,			XK_n,	togglescratch,	{.ui = 2} },
-	/* { MODKEY|ShiftMask,		XK_n,		spawn,		SHCMD(TERMINAL " -e newsboat; pkill -RTMIN+6 dwmblocks") }, */
 	{ MODKEY|ShiftMask,			XK_n,		spawn,		SHCMD(TERMINAL " -e nvim -c VimwikiIndex") },
 	{ MODKEY,			XK_m,		spawn,		SHCMD(TERMINAL " -e ncmpcpp") },
 	{ MODKEY|ShiftMask,		XK_m,		spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
