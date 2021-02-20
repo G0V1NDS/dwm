@@ -171,7 +171,9 @@ To type capital letters, hold down the \f(CWShift\fP key\(emthat might sound lik
 .ITEM
 \f(CWMod+'\fP \(en Show/hide taskwarrior tui
 .ITEM
-\f(CWMod+D\fP \(en passmenu (password manager)
+\f(CWMod+D\fP \(en passdmenu (Custom password manager script)
+.ITEM
+\f(CWMod+B\fP \(en Bluetooth manager
 .LIST OFF
 .HEADING 2 "System"
 .LI
